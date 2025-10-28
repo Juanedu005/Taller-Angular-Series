@@ -19,6 +19,12 @@ export class SerieListComponent implements OnInit {
     })
   }
 
+  avgSeasonsPerSeries(series: Serie[]): number {
+  if (!series.length) return 0;
+  const totalSeasons = series.reduce((acc, s) => acc + s.seasons, 0);
+  return (totalSeasons / series.length);
+  }
+
   ngOnInit() {
     this.getSeries();
   }
