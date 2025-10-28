@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV SERIES</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style> /*hice uso de chat para guiarme de realizar la barra y el formato obteniendo mayor similitud */
+    .page-header{
+        background:#1599A4;
+        color:#fff;
+        padding:10px 16px;
+        border-radius:4px;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        margin-bottom:16px;
+    }
+    .page-header .logo{
+        width:28px; height:28px; object-fit:contain;
+    }
+    .series-name{
+        color:#1f79bf;
+        font-weight:600;
+    }
+    #series-detail { max-width: 360px; }
+    .table tbody tr:hover { background:#f8f9fa; cursor:pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"> 
+                <div class="page-header">
+                <img class="logo" src="IconoSeries.png" alt="TV">
+                <h1 class="m-0">TV Series</h1>
+                </div>
+                <h2> </h2>
+                <table class="table">
+                <thead class="thead-dark">
+                    <tr> 
+                    <th>#</th>
+                    <th>Name</th>   
+                    <th>Channel</th>
+                    <th>Seasons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  @for (s of series; track s){
+                    <tr>
+                      <td>
+                        <dd>{{s.id}}</dd>
+                      </td>
+                      <td>
+                        <dd>{{s.name}}</dd>
+                      </td>
+                      <td>
+                        <dd>{{s.channel}}</dd>
+                      </td>
+                      <td>
+                        <dd>{{s.seasons}}</dd>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+                </table>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
